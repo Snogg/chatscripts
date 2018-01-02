@@ -7,7 +7,7 @@ let login = {
     port: 6667,
     pass: 'oauth:***', //https://twitchapps.com/tmi/ get it here
     nick: 'twitch',
-    channel: 'twitch'
+    channel: 'twitch' //channel you want to watch
 }
 
 client.connect(login.port, login.server, () => {
@@ -18,7 +18,7 @@ client.connect(login.port, login.server, () => {
     console.log('listening to channel . . .')
     client.on('data', (data) => {
         console.log(ircMsg.parse('' + data));
-        write('snoggstream', 'hi im gosu');
+        write('channelname', 'message'); 
     });
 });
 
